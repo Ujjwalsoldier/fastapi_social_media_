@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+{% include 'navbar.html' %}
+
+<style>
+    .container {
+        margin-top: 1em;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+  <form action="/login" method="POST" class="w-50 p-4 border rounded bg-light shadow">
+    
+    <h3 class="text-center mb-4">Login</h3>
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Submit</button>
+
+   
+    {% if invalid %}
+    <p class="text-danger mt-2 text-center">Invalid Username or Password, please try again.</p>
+    {% endif %}
+    
+  </form>
+</div>
+
+{% include 'footer.html' %}
+
+
+
+
